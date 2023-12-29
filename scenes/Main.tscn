@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scenes/Player1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/Main.gd" type="Script" id=2]
+[ext_resource path="res://scenes/Player2.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/Ball.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/Borders.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/Music/ping-pong-ball-100074.wav" type="AudioStream" id=6]
+
+[node name="Main" type="Node"]
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0470588, 0.0470588, 0.0470588, 1 )
+
+[node name="Borders" parent="." instance=ExtResource( 5 )]
+
+[node name="Player1" parent="." instance=ExtResource( 1 )]
+
+[node name="Player2" parent="." instance=ExtResource( 3 )]
+
+[node name="Ball" parent="." instance=ExtResource( 4 )]
+
+[node name="Ball2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )
